@@ -4,18 +4,14 @@ function birthdayCakeCandles(candles) {
     const map = {}
 
     candles.forEach((value) => {
-        if (!map[value]) {
-            map[value] = 1
-        } else {
-            map[value] += 1
-        }
+        map[value] = (map[value] || 0) + 1;
     });
 
     const values = Object.values(map)
     const largest = Math.max(...values)
 
-    return largest
+    console.log(largest)
 }
 
 
-birthdayCakeCandles([1,2,4,4,5,3, 4])
+birthdayCakeCandles([1, 2, 4, 4, 5, 3, 4])
