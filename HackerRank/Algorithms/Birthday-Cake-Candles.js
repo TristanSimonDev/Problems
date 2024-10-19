@@ -1,17 +1,22 @@
+const { escape } = require("querystring");
+
 function birthdayCakeCandles(candles) {
     if (!(candles instanceof Array)) return;
 
-    const map = {}
+    const obj = {}
 
     candles.forEach((value) => {
-        map[value] = (map[value] || 0) + 1;
+        obj[value] = (obj[value] || 0) + 1;
     });
 
-    const values = Object.values(map)
+    const values = Object.values(obj)
     const largest = Math.max(...values)
 
     console.log(largest)
 }
 
 
-birthdayCakeCandles([1, 2, 4, 4, 5, 3, 4])
+
+let arr = [1, 2, 4, 4, 5, 3, 4]
+
+birthdayCakeCandles(arr)
